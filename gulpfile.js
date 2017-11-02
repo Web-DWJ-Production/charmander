@@ -3,6 +3,7 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
+var minifyJs = require('gulp-js-minify');
 var runSequence = require('run-sequence');
 var del = require('del');
 
@@ -91,4 +92,5 @@ gulp.task('build-html', function(){
     
     return merge(tasks);
 });
+
 gulp.task('all', gulpSequence('clean', ['lib-fonts', 'lib-css', 'lib-js', 'app-imgs', 'app-js', 'app-less'], 'build-html'));
