@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "dependencies": {
       "bootstrap": "latest",
-      "animate.css": "latest"
+      "animate.css": "latest",
+      "font-awesome": "^4.7.0"
     }
   }
   
