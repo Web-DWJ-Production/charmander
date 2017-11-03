@@ -1,0 +1,174 @@
+.home{
+    .page-header-container{
+        position: relative;
+        .back-container {
+            position: absolute;
+            z-index: 4;
+            top: 0;
+            left: 0;             
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            .back-section{
+                background: rgba(220,220,220,1);
+                width: 100%;
+                &.hero { min-height: 100vh; background: rgba(255,255,255,1); position: relative; }
+                &.sub { height: 100%; flex: 1 1 auto;}
+                .overlay { 
+                    position: absolute; 
+                    z-index: 1; 
+                    width: 100%; 
+                    height: 100%; 
+                    background: linear-gradient(0deg, @color3, @color1); 
+                    opacity: 0.4;
+                }
+
+                .img {    
+                    position: absolute;
+                    z-index: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    opacity: 0.5;
+    
+                    -webkit-filter: grayscale(80%); /* Safari 6.0 - 9.0 */
+                    filter: grayscale(80%);
+                    &.parallax { background-attachment: fixed;  } 
+                    &.demoimg1{ background-image: url('../images/demo-img.jpg'); }                    
+                }
+            }
+        }
+        .front-container { 
+            position: relative;
+            z-index: 5;
+            min-height: 100vh;
+            padding: @header-height 0px 20px;            
+
+            .front-section {
+                display: block;
+                padding: 10px 20%;
+                color: rgba(255,255,255,1);
+                .header-title {
+                    font-weight: bold;                    
+                    text-align: center;
+                    margin-top: 40px;
+                 }
+                .header-text { 
+                    font-size: 1.3rem;
+                    text-align: center;
+                    margin-top: 30px;
+                }
+                .btn-section { 
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 20px;
+                }
+
+                .section-content {
+                    color: @color3;
+                    .sub-title { text-align: center; }
+                    .section-text { font-size: 1.3rem; line-height: 2rem; text-align: center; }
+                }
+                &+.front-section { margin-top: 30px; }
+            }
+        }
+    }
+    .content-section {
+        color: @color3;
+        &.c3-back {
+            color: rgba(255,255,255,1);
+            .color3(background, 0.7);
+        }
+        .content-box-container {            
+            .content-box {            
+                .service-container{
+                    padding: 10px 20%;
+                    .service-row {
+                        .service-item{
+                            text-align: center;
+                            padding: 10px;
+                            &+.service-item { border-left: 2px solid @color3;}
+                        }
+                        &+.service-row { border-top: 2px solid @color3;}
+                    }
+                }
+
+                .btn-section {
+                    padding-top: 20px;
+                    width: 100%;
+                    text-align: center;
+                    color: rgba(255,255,255,1);
+                }
+
+                .client-container {
+                    position: relative;
+                    padding: 10px 10%;
+                    .client-sub-container {
+                        position: relative;
+                        min-height: 300px;
+                        .back-text { 
+                            width: 35%;
+                            padding: 20px;
+                            line-height: 3rem;
+                            font-size: 1.3rem;
+                        }
+                        .front-logo-container { 
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            overflow-x: hidden;
+                            white-space: nowrap; 
+                            padding-left: 40%;
+
+                            border-left: 3px solid @color3;
+                            border-right: 3px solid @color3;
+
+                            .client-item {
+                                padding: 10px;
+                                display: inline-block;
+                                width: 300px;
+                                height: 300px;
+                                .item-container {
+                                    width: 100%;
+                                    height: 100%;                                
+                                    border: 2px solid rgba(0,0,0,1);
+                                    border-radius: 10px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    background: rgba(255,255,255,1);
+                                    overflow: hidden;
+                                    .image-container { 
+                                        min-height: 70%;
+                                        padding: 10px;
+                                        position: relative;
+                                        text-align: center;
+                                        img { width: 100%;}
+                                    }
+                                    .title-container { padding: 10px; background: @color2; text-align: center; flex: 1 1 auto; }
+                                }
+                            }
+                        }
+                    }
+
+                    .ctrl-container {
+                        text-align: center;
+                        .ctrl {
+                            display: inline-block;
+                            padding: 10px;                                                       
+                            cursor: pointer;
+                            transition: @transition-time all ease;
+
+                            &:hover { color: rgba(100,100,100,1); }
+                            &+.ctrl { margin-left: 30px; }
+                            i { font-size: 30px; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
